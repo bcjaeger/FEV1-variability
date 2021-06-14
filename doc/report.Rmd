@@ -1,0 +1,51 @@
+---
+title: "FEV1 variability"
+author: "Report Author"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+## target knits Rmds in their own session, so load libraries here.
+## source("../packages.R")
+```
+
+## Analysis
+
+Linear models were fitted to the `image_metrics` data. Each model included progressive adjustment. Partial $R^2$ statistics were computed for terms in these models using the `rsq` package. The method used to compute each partial $R^2$ statistic is from Zhang, 2017.
+
+```{r}
+tar_load(model_table)
+
+model_table
+
+```
+
+## References
+
+Zhang, D. (2017). A coefficient of determination for generalized linear models. __The American Statistician__, 71(4): 310-316.
+
+## Reproducibility
+
+<details><summary>Reproducibility receipt</summary>
+
+```{r}
+## datetime
+Sys.time()
+
+## repository
+# if(requireNamespace('git2r', quietly = TRUE)) {
+#   git2r::repository()
+# } else {
+#   c(
+#     system2("git", args = c("log", "--name-status", "-1"), stdout = TRUE),
+#     system2("git", args = c("remote", "-v"), stdout = TRUE)
+#   )
+# }
+
+## session info
+sessionInfo()
+```
+
+</details>
