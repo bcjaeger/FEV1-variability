@@ -61,10 +61,6 @@ lapply(list.files("./R", full.names = TRUE), source)
 # as estimated by HydraulicD_seg and airway volume as well as  AIRWAY LOSS 
 # as estimated by TAC)
 
-
-
-
-
 ## tar_plan supports drake-style targets and also tar_target()
 tar_plan(
 
